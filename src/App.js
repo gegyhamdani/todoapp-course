@@ -21,7 +21,8 @@ const App = () => {
   const handleSubmitTodo = () => {
     if (todoName.length === 0) return;
     setOpenNotificationSave(true);
-    setTodoItem((prevArray) => [...prevArray, todoName]);
+    const data = { todoName, status: false };
+    setTodoItem((prevArray) => [...prevArray, data]);
     setTodoName("");
   };
 
@@ -43,9 +44,15 @@ const App = () => {
   const handleSubmitEditTodo = () => {
     setOpenNotificationEdit(true);
     let newArr = [...todoItem];
-    newArr[selectedTodoItem.index] = selectedTodoItem.item;
+    newArr[selectedTodoItem.index].todoName = selectedTodoItem.item;
     setTodoItem(newArr);
     setSelectedTodoItem({});
+  };
+
+  const handleChangeStatus = (idx) => {
+    let newArr = [...todoItem];
+    newArr[idx].status = !newArr[idx].status;
+    setTodoItem(newArr);
   };
 
   return (
@@ -84,6 +91,7 @@ const App = () => {
           handleSubmitEditTodo={handleSubmitEditTodo}
           handleEditTodo={handleEditTodo}
           handleRemoveTodo={handleRemoveTodo}
+          handleChangeStatus={handleChangeStatus}
         />
       </div>
     </Container>
