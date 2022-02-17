@@ -61,7 +61,7 @@ const App = () => {
         <Toaster
           onClose={setOpenNotificationDelete}
           isShow={openNotificationDelete}
-          background="danger"
+          background="success"
           text="Data berhasil dihapus"
         />
         <Toaster

@@ -8,7 +8,7 @@ const TodoInput = ({ handleChangeTodoName, todoName, handleSubmitTodo }) => {
         <Row>
           <Stack direction="horizontal" gap={3}>
             <Form.Control
-              placeholder="Masukan item.."
+              placeholder="Masukan item...."
               onChange={handleChangeTodoName}
               value={todoName}
             />
