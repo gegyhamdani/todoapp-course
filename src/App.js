@@ -22,7 +22,7 @@ const App = () => {
     if (todoName.length === 0) return;
     setOpenNotificationSave(true);
     const data = { todoName, status: false };
-    setTodoItem((prevArray) => [...prevArray, data]);
+    setTodoItem((prevArray) => [data, ...prevArray]);
     setTodoName("");
   };
 

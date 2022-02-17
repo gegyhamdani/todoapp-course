@@ -11,9 +11,13 @@ const TodoItem = ({
   handleRemoveTodo,
   handleChangeStatus,
 }) => {
-  return todoItem.map((value, i) => {
+  return todoItem.reverse().map((value, i) => {
     return (
-      <Card className="mt-3" key={i.toString()}>
+      <Card
+        className="mt-3"
+        key={i.toString()}
+        border={value.status && "primary"}
+      >
         <Card.Body>
           <Row>
             <Col className="d-flex align-items-center">
@@ -31,7 +35,7 @@ const TodoItem = ({
               <Button
                 className="w-100"
                 onClick={() => handleChangeStatus(i)}
-                variant={value.status ? "warning" : "primary"}
+                variant={value.status ? "secondary" : "primary"}
               >
                 {value.status ? "Undone" : "Done"}
               </Button>
