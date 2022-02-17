@@ -11,7 +11,7 @@ const TodoItem = ({
   handleRemoveTodo,
   handleChangeStatus,
 }) => {
-  return todoItem.reverse().map((value, i) => {
+  return todoItem.map((value, i) => {
     return (
       <Card
         className="mt-3"
